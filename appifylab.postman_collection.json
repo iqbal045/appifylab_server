@@ -1,0 +1,619 @@
+{
+	"info": {
+		"_postman_id": "033be97b-7c3f-4e65-9465-4f2852d0ea08",
+		"name": "appifylab",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5844367"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Register user",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Iqbal 2\",\n    \"email\": \"iqba8888@gmail.com\",\n    \"phone\": \"222222222222\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/user/auth/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login user",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"iqba8888@gmail.com\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/user/auth/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forget password",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"iqbal096096@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/user/auth/forget-password",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"auth",
+								"forget-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify otp",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"iqbal096096@gmail.com\",\n    \"otp\": \"1207\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/user/auth/verify-otp",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"auth",
+								"verify-otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset password",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"iqbal096096@gmail.com\",\n    \"otp\": \"1207\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/user/auth/reset-password",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"auth",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "feeds",
+			"item": [
+				{
+					"name": "get all feeds",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/feeds",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"feeds"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create feed",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "text",
+									"value": "Test feed contend 4",
+									"type": "text"
+								},
+								{
+									"key": "gallery",
+									"type": "file",
+									"src": "/C:/Users/iqbal/OneDrive/Desktop/469-2023-05-16-14-09-17-3.jpg"
+								},
+								{
+									"key": "gallery",
+									"type": "file",
+									"src": "/C:/Users/iqbal/OneDrive/Desktop/dellmoor-fav.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/feeds",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"feeds"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update feed by id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "text",
+									"value": "Test feed contend 2",
+									"type": "text"
+								},
+								{
+									"key": "gallery",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "gallery",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/feeds/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"feeds",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "655fb2716e0fbc5b73fa6e10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete feed by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/feeds/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"feeds",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "655f8e97eea79240d8267eac"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "like feed by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/feeds/:id/like",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"feeds",
+								":id",
+								"like"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65620bf659d9db7698dea046"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "comment",
+			"item": [
+				{
+					"name": "create comment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"feedId\": \"655f9068dc3a3a19df2d6ab9\",\r\n    \"text\": \"Test comments\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/comments",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update comment",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\": \"Test comments 2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/comments/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"comments",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65604c5e4a96b7aaef29c30d"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete comment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/comments/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"comments",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65604ae4c6bfe41282e9c2e4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "like comment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/comments/:id/like",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"comments",
+								":id",
+								"like"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65604c5e4a96b7aaef29c30d"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "reply",
+			"item": [
+				{
+					"name": "create reply",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"commentId\": \"6561b840b8e821bc9ff8dfd2\",\r\n    \"text\": \"Test reply\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/replies",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"replies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update reply",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\": \"Test reply 2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/replies/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"replies",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65605a4ade8e6a7af70760e8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete reply",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/replies/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"replies",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6560568b22eebc5a2ef4d5db"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "like reply",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/replies/:id/like",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"replies",
+								":id",
+								"like"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65605a4ade8e6a7af70760e8"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NWYzNWM3ZmYyYjljYzU5ZDUyZjRhZCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzAwNzQyNzkyLCJleHAiOjMzMjI2Nzg1MTkyfQ.FaN1P6W0V5cxb0C4PzmfATC_VnFpmZPalh5R4_15tsM",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
