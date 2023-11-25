@@ -1,0 +1,26 @@
+version: '4'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      APP_URL: 'http://127.0.0.1:3000'
+      API_URL: '/api'
+      PORT: '3000'
+      MONGO_DB_URI: 'mongodb://mongodb:27017/sheba_db'  # Update to your MongoDB container name
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+volumes:
+  mongodb_data:
